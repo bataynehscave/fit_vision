@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-    if request.user:
+    if request.user.is_authenticated:
         return render(request, 'main_page.html')
     return render(request, 'home.html')
 

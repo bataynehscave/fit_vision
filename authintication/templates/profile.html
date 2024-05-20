@@ -1,14 +1,93 @@
+<!-- authentication/templates/authentication/profile.html -->
 {% extends 'base_generic.html' %}
 
 {% block content %}
-  <img src="" alt="Image uploads will be added soon" />
-  <h1>{{ user.username }}'s Profile</h1>
-  <p>Name: {{ profile.name }}</p>
-  <p>Age: {{ profile.age }}</p>
-  <p>Weight: {{ profile.weight }}</p>
-  <p>Height: {{ profile.height }}</p>
-  <p>Fitness Level: {{ profile.fitnessLevel }}</p>
-  <p>Goals: {{ profile.goals }}</p>
-  <p>Preferences: {{ profile.preferences }}</p>
-  <a href="{% url 'edit_profile' %}">Edit Profile</a>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow-lg border-0 rounded-lg">
+          <div class="card-body text-center">
+            <img src="" alt="Image uploads will be added soon" class="img-fluid rounded-circle mb-4" />
+            <h1 class="mb-3">{{ user.username }}'s Profile</h1>
+            <p>
+              <strong>Name:</strong> {{ profile.name }}
+            </p>
+            <p>
+              <strong>Age:</strong> {{ profile.age }}
+            </p>
+            <p>
+              <strong>Weight:</strong> {{ profile.weight }} kg
+            </p>
+            <p>
+              <strong>Height:</strong> {{ profile.height }} cm
+            </p>
+            <p>
+              <strong>Fitness Level:</strong> {{ profile.fitnessLevel }}
+            </p>
+            <p>
+              <strong>Goals:</strong> {{ profile.goals }}
+            </p>
+            <p>
+              <strong>Preferences:</strong> {{ profile.preferences }}
+            </p>
+            <a href="{% url 'edit_profile' %}" class="btn btn-dark mt-4">Edit Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
+
+<style>
+  body {
+    background: #f7f9fc;
+  }
+  
+  .container {
+    margin-top: 50px;
+  }
+  
+  .card {
+    border-radius: 15px;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
+  
+  .btn-dark {
+    background: #343a40;
+    border-color: #343a40;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .btn-dark:hover {
+    background: #23272b;
+    border-color: #23272b;
+  }
+  
+  .img-fluid {
+    max-width: 150px;
+    height: auto;
+    border: 5px solid #343a40;
+    transition: border-color 0.3s;
+  }
+  
+  .img-fluid:hover {
+    border-color: #23272b;
+  }
+  
+  h1 {
+    color: #343a40;
+  }
+  
+  p {
+    color: #495057;
+    font-size: 1.1em;
+  }
+  
+  .card-body {
+    padding: 40px;
+  }
+</style>

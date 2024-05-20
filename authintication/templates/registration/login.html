@@ -1,11 +1,86 @@
-<!-- myapp/templates/registration/login.html -->
 {% extends 'base_generic.html' %}
 
 {% block content %}
-  <h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg border-0 rounded-lg">
+          <div class="card-header bg-dark text-white">
+            <h3 class="text-center font-weight-light my-4">Login</h3>
+          </div>
+          <div class="card-body">
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <div class="form-group">
+                <button type="submit" class="btn btn-dark btn-block">Login</button>
+              </div>
+            </form>
+          </div>
+          <div class="card-footer text-center">
+            <div class="small">
+              <a href="{% url 'register' %}" class="text-dark">Need an account? Sign up!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
+
+<style>
+  body {
+    background: #e9ecef;
+  }
+  
+  .container {
+    margin-top: 50px;
+  }
+  
+  .card {
+    border-radius: 15px;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
+  
+  .btn-dark {
+    background: #343a40;
+    border-color: #343a40;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .btn-dark:hover {
+    background: #23272b;
+    border-color: #23272b;
+  }
+  
+  .text-dark {
+    color: #343a40 !important;
+    transition: color 0.3s;
+  }
+  
+  .text-dark:hover {
+    color: #23272b !important;
+  }
+  
+  .card-header {
+    border-bottom: 0;
+    background: linear-gradient(45deg, #343a40, #23272b);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .small a {
+    text-decoration: none;
+    color: #343a40;
+  }
+  
+  .small a:hover {
+    color: #23272b;
+  }
+</style>
