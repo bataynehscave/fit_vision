@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+        color: #fff;
+      }
+      
+      .coming-soon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+      }
+      
+      .content {
+        max-width: 600px;
+      }
+      
+      .content h1 {
+        font-size: 4rem;
+        animation: fadeInDown 1.5s;
+      }
+      
+      .content p {
+        font-size: 1.5rem;
+        animation: fadeInUp 2s;
+      }
+      
+      .shapes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        overflow: hidden;
+      }
+      
+      .shapes .shape {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.5;
+        animation: move 20s infinite;
+      }
+      
+      .shapes .shape-1 {
+        width: 200px;
+        height: 200px;
+        background-color: #ff6f61;
+        top: 10%;
+        left: 15%;
+        animation-delay: 0s;
+      }
+      
+      .shapes .shape-2 {
+        width: 300px;
+        height: 300px;
+        background-color: #ffde7d;
+        top: 70%;
+        left: 70%;
+        animation-delay: 5s;
+      }
+      
+      .shapes .shape-3 {
+        width: 150px;
+        height: 150px;
+        background-color: #6fffe9;
+        top: 50%;
+        left: 40%;
+        animation-delay: 10s;
+      }
+      
+      .shapes .shape-4 {
+        width: 250px;
+        height: 250px;
+        background-color: #ff4b5c;
+        top: 30%;
+        left: 80%;
+        animation-delay: 15s;
+      }
+      
+      @keyframes move {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+      
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+    </div>
+
+    <div class="coming-soon">
+      <div class="content">
+        <h1 class="animate__animated animate__bounceInDown">Coming Soon</h1>
+        <p class="animate__animated animate__fadeInUp">Our awesome website is under construction. Stay tuned for something amazing!</p>
+        <p class="animate__animated animate__fadeInUp">
+          Launching in <span id="countdown"></span>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Countdown Timer
+      const countDownDate = new Date('Aug 31, 2024 23:59:59').getTime()
+      const countdownElement = document.getElementById('countdown')
+      
+      function updateCountdown() {
+        const now = new Date().getTime()
+        const distance = countDownDate - now
+      
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000)
+      
+        countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`
+      
+        if (distance < 0) {
+          countdownElement.innerHTML = 'EXPIRED'
+        }
+      }
+      
+      setInterval(updateCountdown, 1000)
+    </script>
+  </body>
+</html>

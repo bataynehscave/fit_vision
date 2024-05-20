@@ -1,0 +1,113 @@
+{% load static %}
+
+<head>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link href="{% static 'styles_base.css' %}" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+
+{% block content %}
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Welcome, {{ user.username }}</h1>
+    <p class="lead">Access all your fitness functionalities from here.</p>
+    <hr class="my-4" />
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'profile' %}">View Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'coming_soon' %}">Workouts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'coming_soon' %}">Nutrition</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'coming_soon' %}">Track Progress</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'coming_soon' %}">Community</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'coming_soon' %}">Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-danger" href="{% url 'logout' %}">Logout</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Profile</h5>
+          <p class="card-text">View and edit your profile information.</p>
+          <a href="{% url 'profile' %}" class="btn btn-primary">Go to Profile</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Workouts</h5>
+          <p class="card-text">Find and manage your workouts.</p>
+          <a href="{% url 'coming_soon' %}" class="btn btn-primary">Go to Workouts</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Nutrition</h5>
+          <p class="card-text">Manage your diet and nutrition plans.</p>
+          <a href="{% url 'coming_soon' %}" class="btn btn-primary">Go to Nutrition</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Track Progress</h5>
+          <p class="card-text">Track your fitness progress over time.</p>
+          <a href="{% url 'coming_soon' %}" class="btn btn-primary">Go to Progress Tracker</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Community</h5>
+          <p class="card-text">Connect with other users and share experiences.</p>
+          <a href="{% url 'coming_soon' %}" class="btn btn-primary">Go to Community</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Settings</h5>
+          <p class="card-text">Adjust your account settings and preferences.</p>
+          <a href="{% url 'coming_soon' %}" class="btn btn-primary">Go to Settings</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+<div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</div>

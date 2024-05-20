@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
+from .forms import ProfileForm
 
 def login_view(request):
     form = AuthenticationForm()
@@ -21,6 +22,27 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('login')
+
+
+
+
+@login_required
+def profile_viewu(request):
+    profile = request.user.profile
+    return render(request, 'profile.html', {'profile': profile})
+
+
+@login_required
+def edit_profile(request):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=request.user.profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = ProfileForm(instance=request.user.profile)
+    return render(request, 'edit_profile.html', {'form': form})
+
 
 
 

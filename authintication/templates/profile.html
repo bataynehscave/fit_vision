@@ -1,0 +1,14 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <img src="" alt="Image uploads will be added soon" />
+  <h1>{{ user.username }}'s Profile</h1>
+  <p>Name: {{ profile.name }}</p>
+  <p>Age: {{ profile.age }}</p>
+  <p>Weight: {{ profile.weight }}</p>
+  <p>Height: {{ profile.height }}</p>
+  <p>Fitness Level: {{ profile.fitnessLevel }}</p>
+  <p>Goals: {{ profile.goals }}</p>
+  <p>Preferences: {{ profile.preferences }}</p>
+  <a href="{% url 'edit_profile' %}">Edit Profile</a>
+{% endblock %}

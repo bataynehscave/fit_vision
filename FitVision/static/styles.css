@@ -133,7 +133,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-#hero {
+/* #hero {
     background: url('{% static "overlay.jpg" %}') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
@@ -143,7 +143,7 @@ footer a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-}
+} */
 
 #hero .hero-content {
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
@@ -152,5 +152,6 @@ footer a:hover {
 }
 
 h1.display-4 {
-    color: white;
+    color: black;
+    margin: auto;
 }
