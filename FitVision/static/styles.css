@@ -1,0 +1,156 @@
+/* Custom CSS */
+
+/* Hero Section */
+#hero {
+    background-color: #f8f9fa;
+  }
+  
+  /* Feature Boxes */
+  .feature {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Call-to-Action Section */
+  #cta-section {
+    background-color: #007bff;
+    color: #fff;
+    padding: 60px 0;
+  }
+  
+  /* Footer Section */
+  .footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 40px 0;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .footer-links li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-social img {
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+  }
+  
+  .jumbotron {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 5rem 1rem;
+  }
+  
+  .jumbotron.bg-secondary {
+    background-color: #6c757d;
+  }
+  
+  .section-heading {
+    margin-bottom: 2rem;
+  }
+  
+  .feature, .testimonial {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer {
+    padding: 2rem 0;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .footer-links ul li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .footer-links ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-social a img {
+    width: 24px;
+    height: 24px;
+  }
+  
+
+
+  body {
+    background-color: #f8f9fa; /* Light grey background */
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: #343a40; /* Dark grey background */
+    color: white;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.main {
+    padding: 2rem;
+}
+
+footer {
+    background-color: #343a40; /* Dark grey background */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer a {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#hero {
+    background: url('{% static "overlay.jpg" %}') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#hero .hero-content {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1.display-4 {
+    color: white;
+}
