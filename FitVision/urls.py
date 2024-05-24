@@ -20,8 +20,10 @@ from .views import *
 
 
 urlpatterns = [
+    path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('accounts/',include('authintication.urls')),
-    path('soon', coming_soon, name='coming_soon')
+    path('soon', coming_soon, name='coming_soon'),
+
 ]
